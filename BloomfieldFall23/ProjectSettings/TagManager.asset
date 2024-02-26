@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ramp
   - cube
+  - Ground
   layers:
   - Default
   - TransparentFX

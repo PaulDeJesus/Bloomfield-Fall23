@@ -10,15 +10,24 @@ public class player3D : MonoBehaviour
     public GameObject myCam;
     public float camLock = 90;
     public float lookSpeed = 5f;
+    public float jumpForce = 50f;
+    public bool jumped = false;
+    public bool canJump = true;
 
     Rigidbody myRB;
     Vector3 myLook;
+
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;    
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myLook = Vector3.zero;
+        jumped = false;
     }
 
     // Update is called once per frame
@@ -44,7 +53,11 @@ public class player3D : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, myLook.x, 0f);
         myCam.transform.rotation = Quaternion.Euler(-myLook.y, myLook.x, 0f);
-
+        
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            jumped = true;
+        }
     }
 
     void FixedUpdate()
@@ -52,6 +65,11 @@ public class player3D : MonoBehaviour
         Vector3 myDir = transform.TransformDirection(Dir());
         Debug.Log("input dir: " + myDir);
         myRB.AddForce(myDir * speed);
+
+        if(jumped && canJump)
+        {
+            Jump();
+        }
     }
 
 
@@ -98,5 +116,21 @@ public class player3D : MonoBehaviour
     }
 
 
+    void Jump()
+    {
+        myRB.AddForce(Vector3.up * jumpForce);
+        jumped = false;
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground") { canJump = true; }
+    }
+
+
+    void OnCollisionExit(Collision collision)
+    {
+        canJump = false;
+    }
 
 }
