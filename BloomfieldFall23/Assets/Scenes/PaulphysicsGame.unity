@@ -412,6 +412,8 @@ MonoBehaviour:
   spawnWaves:
   - {fileID: 3045783623844641437, guid: 9dd3e38563463a347ab96b5c26c77a80, type: 3}
   - {fileID: 1917260650488840172, guid: b1e9de82fa6081644a6a3a12ebb477ea, type: 3}
+  - {fileID: 1846125810475483208, guid: 809152ea7eeaaf140b2204c8192c59d6, type: 3}
+  - {fileID: 2180959692897608122, guid: 823a699999186f94e9034423cb49c993, type: 3}
   waveCount: 0
 --- !u!4 &1589069273
 Transform:
