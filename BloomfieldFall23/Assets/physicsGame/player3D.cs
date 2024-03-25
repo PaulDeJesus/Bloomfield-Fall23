@@ -13,13 +13,16 @@ public class player3D : MonoBehaviour
     public float jumpForce = 50f;
     public bool jumped = false;
     public bool canJump = true;
+    float airTime;
+    public float airMultiplier = 10f;
 
     Rigidbody myRB;
     Vector3 myLook;
 
     void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;    
+        Cursor.lockState = CursorLockMode.Locked;
+        airTime = 0;
     }
 
     // Start is called before the first frame update
@@ -70,6 +73,13 @@ public class player3D : MonoBehaviour
         {
             Jump();
         }
+
+        if (!canJump)
+        {
+            myRB.AddForce(Physics.gravity*airTime*airMultiplier);
+            airTime += Time.fixedDeltaTime;
+         
+        }
     }
 
 
@@ -77,25 +87,6 @@ public class player3D : MonoBehaviour
     {
         Vector3 moveDir = Vector3.zero;
 
-      /*  if (Input.GetKey(forward))
-        {
-            //moveDir += Vector3.forward + speed;
-        }
-
-       if (Input.GetKey(backwards))
-        {
-
-        }
-
-       if (Input.GetKey(left))
-        {
-
-        }
-
-       if (Input.GetKey(right))
-        {
-
-        }*/
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -131,6 +122,7 @@ public class player3D : MonoBehaviour
     void OnCollisionExit(Collision collision)
     {
         canJump = false;
+        airTime = 0;
     }
 
 }

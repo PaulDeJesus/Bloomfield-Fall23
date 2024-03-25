@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class NPC : MonoBehaviour
+public class RampNPC : MonoBehaviour
 {
     [Header("base vars")]
     public GameObject targetPlayer;
     public float speed = 50f;
     Rigidbody myRB;
+    bool grounded = false;
 
 
     [Header("Plow Vars")]
@@ -52,6 +53,11 @@ public class NPC : MonoBehaviour
                 nearPlayer = true;
             }
         }
+
+        if(!grounded)
+        {
+            myRB.AddForce(Physics.gravity);
+        }
     }
 
     Vector3 VectorToPlayer()
@@ -59,12 +65,22 @@ public class NPC : MonoBehaviour
         Vector3 targetDir;
         targetDir = targetPlayer.transform.position - transform.position;
         targetDir = targetDir.normalized;
-        Debug.DrawRay(transform.position, targetDir * 3f, Color.red);
+        Debug.DrawRay(transform.position, targetDir * speed, Color.red);
         return targetDir;
     }
 
     void Launch()
     {
         myRB.AddForce(VectorToPlayer() * launchSpeed);
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground") { grounded = true; }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
     }
 }

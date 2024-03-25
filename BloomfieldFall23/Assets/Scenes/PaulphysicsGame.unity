@@ -308,7 +308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 151c4eba248fbc0429bba82d59f8f8bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185741160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: -0.37}
+  m_LocalPosition: {x: 16.5, y: 1.03, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -366,13 +366,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118953dde72ca104e80b089154695a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 300
   myCam: {fileID: 1743907468}
-  camLock: 30
-  lookSpeed: 100
-  jumpForce: 1000
+  camLock: 60
+  lookSpeed: 1000
+  jumpForce: 10000
   jumped: 0
   canJump: 1
+  airMultiplier: 10
 --- !u!1 &1589069271
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,12 +404,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  enemyTimer: 0
+  enemyTimer: 8
   currentTime: {fileID: 0}
-  spawnInterval: 2
+  spawnInterval: 10
   myPlayer: {fileID: 1185741160}
-  spawnBounds: {x: 20, y: 1}
-  myEnemy: {fileID: 0}
+  spawnBounds: {x: -200, y: 200}
+  myEnemy: {fileID: 5829102301651181494, guid: 89dba4929d1a1354f9c27672f2c90850, type: 3}
   spawnWaves:
   - {fileID: 3045783623844641437, guid: 9dd3e38563463a347ab96b5c26c77a80, type: 3}
   - {fileID: 1917260650488840172, guid: b1e9de82fa6081644a6a3a12ebb477ea, type: 3}
@@ -583,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aadd5a709a48466c887296bb5b1b8110, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -621,8 +622,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931916068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalPosition: {x: 12.8, y: 0, z: 0}
+  m_LocalScale: {x: 13.667034, y: 2.7334068, z: 13.667034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
