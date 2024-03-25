@@ -9,7 +9,6 @@ public class RampNPC : MonoBehaviour
     public GameObject targetPlayer;
     public float speed = 50f;
     Rigidbody myRB;
-    bool grounded = false;
 
 
     [Header("Plow Vars")]
@@ -54,10 +53,6 @@ public class RampNPC : MonoBehaviour
             }
         }
 
-        if(!grounded)
-        {
-            myRB.AddForce(Physics.gravity);
-        }
     }
 
     Vector3 VectorToPlayer()
@@ -74,13 +69,4 @@ public class RampNPC : MonoBehaviour
         myRB.AddForce(VectorToPlayer() * launchSpeed);
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground") { grounded = true; }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        grounded = false;
-    }
 }
