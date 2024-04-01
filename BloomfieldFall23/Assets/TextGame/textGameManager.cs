@@ -8,6 +8,13 @@ using UnityEngine.XR;
 
 public class textGameManager : MonoBehaviour
 {
+    public List<string> myInventory;
+
+    [Header("SceneChange Vars")]
+    public GameObject sceneChanger;
+    Button changerButton;
+    TextMeshProUGUI changeButtonText;
+
     [Header("name buttons")]
     public TMP_InputField myInput;
     public string playerName;
@@ -23,6 +30,7 @@ public class textGameManager : MonoBehaviour
     void Start()
     {
         WelcomeText = welcomeObject.GetComponent<TextMeshProUGUI>();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -40,5 +48,11 @@ public class textGameManager : MonoBehaviour
         string newWelcome = welcomeMessage.Replace(replaceText, playerName);
 
         WelcomeText.text = newWelcome;
+
+        sceneChanger.SetActive(true);
+    }
+    public void inventoryAdd(string item)
+    {
+        myInventory.Add(item);
     }
 }

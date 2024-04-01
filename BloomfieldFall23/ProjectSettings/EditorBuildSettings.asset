@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/textRoom1.unity
     guid: 26dace302ad6c964d91250df49050526
+  - enabled: 1
+    path: Assets/Scenes/textRoom2.unity
+    guid: e700070a704a92643b6c270a225c459a
   m_configObjects: {}
