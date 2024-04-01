@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/topDownCar.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PaulphysicsGame.unity
     guid: 76d61266c4a305b4f9b088a46552961c
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: c44ca19f4dc39524aa5f9bc777d1d088
+  - enabled: 1
+    path: Assets/Scenes/textRoom1.unity
+    guid: 26dace302ad6c964d91250df49050526
   m_configObjects: {}
