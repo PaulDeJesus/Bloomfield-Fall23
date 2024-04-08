@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 491896323}
   - component: {fileID: 491896322}
   - component: {fileID: 491896326}
+  - component: {fileID: 491896327}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -552,6 +553,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587daf370b2f35843a77cd65bf06f8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &491896327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491896321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849261c611edea448aac071a9ad358a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPlayer: {fileID: 0}
 --- !u!1 &794675342
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,8 +877,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 491896326}
-        m_TargetAssemblyTypeName: sceneChanger, Assembly-CSharp
+      - m_Target: {fileID: 491896327}
+        m_TargetAssemblyTypeName: buttonHelper, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:

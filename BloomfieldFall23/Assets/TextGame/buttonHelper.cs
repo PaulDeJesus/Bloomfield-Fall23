@@ -14,10 +14,9 @@ public class buttonHelper : MonoBehaviour
         myPlayer = FindAnyObjectByType<textGameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddtoPlayerInv(string item)
     {
-        
+        myPlayer.inventoryAdd(item);
     }
 
     public void GoToScene(string sceneName)
@@ -26,4 +25,8 @@ public class buttonHelper : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void SetName()
+    {
+        myPlayer.SetName();
+    }
 }

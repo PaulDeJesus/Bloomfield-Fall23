@@ -51,8 +51,4 @@ public class textGameManager : MonoBehaviour
     {
         myInventory.Add(item);
     }
-    public void setName()
-    {
-        
-    }
 }
