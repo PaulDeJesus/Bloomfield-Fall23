@@ -31,12 +31,8 @@ public class textGameManager : MonoBehaviour
     {
         WelcomeText = welcomeObject.GetComponent<TextMeshProUGUI>();
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+
     }
 
     public void SetName()
@@ -54,5 +50,9 @@ public class textGameManager : MonoBehaviour
     public void inventoryAdd(string item)
     {
         myInventory.Add(item);
+    }
+    public void setName()
+    {
+        
     }
 }
