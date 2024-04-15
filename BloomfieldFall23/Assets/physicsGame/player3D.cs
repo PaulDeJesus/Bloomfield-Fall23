@@ -118,7 +118,6 @@ public class player3D : MonoBehaviour
         if(collision.gameObject.tag == "Ground") { canJump = true; }
     }
 
-
     void OnCollisionExit(Collision collision)
     {
         canJump = false;
